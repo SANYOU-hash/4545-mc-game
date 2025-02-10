@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器介绍</title>
+    <link rel="icon" href="/images/icon/favicon.ico">
+    <style>
+        body {
+            background-image: url('https://pixelz.cc/wp-content/uploads/2019/05/vocaloid-hatsune-miku-uhd-4k-wallpaper.jpg');
+            background-size: cover; /* 使背景图片覆盖整个区域 */
+            background-repeat: no-repeat; /* 防止图片重复 */
+            background-attachment: fixed; /* 当页面滚动时背景图片固定不动 */
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+            scroll-behavior: smooth; /* Smooth scrolling */
+            transition: all 0.3s ease-in-out; /* Transition for the entire website */
+        }
+
+        .header {
+            padding: 50px 0;
+            background-color: rgba(45, 183, 171, 0.9); /* Semi-transparent background for better readability */
+            transition: background-color 0.3s ease-in-out; /* Transition for header background */
+        }
+
+        .welcome-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            transition: color 0.3s ease-in-out; /* Transition for welcome text color */
+        }
+
+        .sub-welcome-text {
+            font-size: 1em;
+            color: white; /* Changed to white */
+            transition: color 0.3s ease-in-out; /* Transition for sub-welcome text color */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px; /* Increased gap between buttons */
+            margin-top: 100px; /* Moved down a bit more */
+            margin-bottom: 70px; /* Increased margin below buttons */
+        }
+
+        .button-container button {
+            padding: 50px 100px; /* Higher and longer buttons */
+            border: 2px solid white; /* White border */
+            border-radius: 15px; /* More rounded corners */
+            background-color: #39C5BB; /* New color */
+            color: white; /* White text */
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Transitions for button effects */
+            font-size: 1.6em; /* Larger font size */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+
+        .button-container button:hover {
+            background-color: #25AEBF; /* Slightly darker on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        .content {
+            padding: 20px;
+            transition: padding 0.3s ease-in-out; /* Transition for content padding */
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            transition: margin-bottom 0.3s ease-in-out; /* Transition for section title margin */
+        }
+
+        .editor-section {
+            width: 80%;
+            margin: 70px auto;
+            padding: 50px;
+            background-color: rgba(45, 183, 171, 0.9);
+            border-radius: 10px;
+            color: white;
+            text-align: left;
+            transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out; /* Transitions for editor section */
+        }
+
+        .footer {
+            padding: 50px 0;
+            background-color: rgba(45, 183, 171, 0.9);
+            color: white; /* Text color changed to white */
+            transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out; /* Transitions for footer */
+        }
+
+        .footer p {
+            font-size: 1.2em;
+            transition: font-size 0.3s ease-in-out; /* Transition for footer paragraph font size */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            transition: opacity 0.3s ease-in-out; /* Transition for modal opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: left;
+            transition: transform 0.3s ease-in-out; /* Transition for modal content */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out; /* Transition for close icon color */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        .contact-info strong {
+            color: #39C5BB;
+            transition: color 0.3s ease-in-out; /* Transition for contact info strong color */
+        }
+
+        .white-text {
+            color: white;
+        }
+
+        .audio-player {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="welcome-text">欢迎来到我们的MC服务器</h1>
+        <p class="sub-welcome-text">Welcome to our mc server</p>
+    </div>
+    <div class="button-container">
+        <button onclick="scrollToSection('about')">关于我们</button>
+        <button onclick="window.open('https://qm.qq.com/q/9C6V11xKTu', '_blank')">加入我们</button>
+        <button onclick="openModal()">联系我们</button>
+        <button onclick="alert('敬请期待！')">敬请期待</button>
+    </div>
+    <div class="content">
+        <div id="about" class="editor-section">
+            <h2 class="section-title">关于我们</h2>
+            <p>
+                我是一个服务器的腐竹 仅此而已的😁
+                miku天下第一！！！！！！！！
+                世界第一公主殿下！！！！！！<br><br>
+            </p>
+        </div>
+        <h2 class="section-title">服务器特点</h2>
+        <p class="section-title">
+                - 绝对自由：在这个服务器中，没有规则限制你的行为。无论是建造、破坏还是探险，一切皆有可能。<br>
+                - 真实生存挑战：面对真正的生存挑战，在这个无法律的世界里，每一次遭遇都充满了未知。<br>
+                - 丰富资源与自定义地形：利用最新版Minecraft带来的新资源和地形生成机制，探索前所未有的世界。<br>
+                - 社区驱动的内容：虽然服务器本身不设规则，但活跃的玩家社区会自发组织活动和项目，为游戏增添更多乐趣和挑战。
+        </p>
+        <h2 class="section-title">玩家体验</h2>
+        <p class="section-title">
+                - 建造梦想中的城堡或城市，不受任何约束。<br>
+                - 加入临时联盟或是独自一人对抗其他玩家，体验紧张刺激的PVP战斗。<br>
+                - 探索被遗忘的遗迹，寻找稀有资源，制作强力装备。<br><br>
+               
+        </p>
+        <h2 class="section-title">如何加入</h2>
+        <p class="section-title">
+            <strong>步骤如下：</strong><br>
+            1. 确保你的Minecraft客户端已更新至1.20.2版本。<br>
+            2. 打开Minecraft游戏，进入多人游戏菜单。<br>
+            3. 点击“添加服务器”，输入服务器名称（例如：“自由之土”）。<br>
+            4. 在“服务器地址”栏输入具体的服务器IP地址[具体服务器IP]。<br>
+            5. 点击“完成”，然后点击你刚刚添加的服务器以连接。<br>
+            准备好迎接一个全新的、完全自由的冒险吧！
+        </p>
+    </div>
+    <div class="footer">
+        <p>
+            加入我们的1.20.2无政府生存服务器，体验高性能、稳定流畅的游戏世界。释放你的创造力，探索未知，享受自由冒险的乐趣。立即开始，一切由你主宰！
+        </p>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p class="contact-info"><strong>联系方式：</strong></p>
+            <p class="contact-info"><strong>邮箱:</strong> Crx97220130101@outlook.com</p>
+            <p class="contact-info"><strong>备用邮箱:</strong> 1764124489@qq.com</p>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <audio controls autoplay>
+            <source src="https://ws6.stream.qqmusic.qq.com/C400002Ql2O31rVjxk.m4a?guid=455582826&vkey=620E9298BE0545730D050849A484B9258E66BFA7A506E86145ACB715A12F4F0439FFE8963C28B1D13ED5535EA9F2FDD677D20845313EFBE6__v215192d47&uin=4305796340&fromtag=120032"audio/mp4">
+            您的浏览器不支持 audio 元素。
+        </audio>
+    </div>
+
+<script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        window.addEventListener('click', function (event) {
+            if (event.target === document.getElementById('myModal')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
